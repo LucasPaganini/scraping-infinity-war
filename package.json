@@ -5,6 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "NODE_ENV=development node dist/scripts/checkInfinityWarTickets",
     "serve": "tsc --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
