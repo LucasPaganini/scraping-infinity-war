@@ -5,7 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=development node dist/scripts/checkInfinityWarTickets",
+    "start": "NODE_ENV=development node dist/main",
+    "build": "tsc",
     "serve": "tsc --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,11 +21,11 @@
   },
   "homepage": "https://github.com/LucasPaganini/scraping-infinity-war#readme",
   "dependencies": {
-    "@types/node": "^10.0.0",
-    "puppeteer": "^1.3.0"
+    "puppeteer": "^2.0.0"
   },
   "devDependencies": {
-    "@types/puppeteer": "^1.2.3",
-    "typescript": "^2.6.2"
+    "@types/node": "^12.12.14",
+    "@types/puppeteer": "^2.0.0",
+    "typescript": "^3.7.2"
   }
 }
