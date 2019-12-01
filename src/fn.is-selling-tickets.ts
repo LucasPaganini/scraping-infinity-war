@@ -1,4 +1,5 @@
 import * as puppeteer from 'puppeteer'
+import { ENV } from './const.config'
 
 export const isSellingTickets = async (
   date: string,
@@ -6,7 +7,7 @@ export const isSellingTickets = async (
 ): Promise<boolean> => {
   console.log('Launching browser')
   const browser = await puppeteer.launch({
-    headless: process.env.NODE_ENV !== 'development',
+    headless: ENV !== 'development',
   })
   const page = await browser.newPage()
 
