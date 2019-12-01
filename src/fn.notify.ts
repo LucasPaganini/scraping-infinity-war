@@ -1,13 +1,13 @@
 import { createTransport } from 'nodemailer'
-import { EMAIL_PASSWORD, NOTIFY_TO } from './const.config'
+import { SMTP_SENDER, NOTIFY_TO } from './const.config'
 
 const transport = createTransport({
-  host: 'mail.lucaspaganini.com',
+  host: SMTP_SENDER.host,
   port: 465,
   secure: true,
   auth: {
-    user: 'no-reply@lucaspaganini.com',
-    pass: EMAIL_PASSWORD,
+    user: SMTP_SENDER.user,
+    pass: SMTP_SENDER.pass,
   },
 })
 

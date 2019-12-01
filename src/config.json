@@ -1,0 +1,16 @@
+{
+  "movie": {
+    "date": "2019.12.20",
+    "title": "Star Wars: A Ascensão Skywalker"
+  },
+  "interval": 30,
+
+  "emailNotification": {
+    "destination": "->YOUR_EMAIL_HERE<-",
+    "secureSMTPSender": {
+      "host": "mail.lucaspaganini.com",
+      "user": "no-reply@lucaspaganini.com",
+      "pass": "->PUT_THE_PASSWORD_HERE<-"
+    }
+  }
+}

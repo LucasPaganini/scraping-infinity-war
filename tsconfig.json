@@ -3,9 +3,9 @@
     "module": "commonjs",
     "target": "es2017",
     "moduleResolution": "node",
+    "resolveJsonModule": true,
 
     "outDir": "dist",
-    "baseUrl": ".",
     "rootDir": "src",
     "types": ["node"],
     "typeRoots": ["node_modules/@types"],

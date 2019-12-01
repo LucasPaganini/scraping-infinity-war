@@ -1,6 +1,4 @@
-import * as dotenv from 'dotenv'
-
-dotenv.config()
+import * as _config from './config.json'
 
 type ENV = 'development' | 'production'
 const getENV = (): ENV => {
@@ -13,16 +11,10 @@ const getENV = (): ENV => {
   return e
 }
 
-const requireEnvironmentVariable = (varName: string): string => {
-  if (process.env[varName] === undefined)
-    throw new Error(`${varName} must be specified`)
-  else return process.env[varName] as string
-}
+export const DATE = _config.movie.date
+export const MOVIE = _config.movie.title
+export const INTERVAL = 1000 * 60 * _config.interval // _config.interval is in minutes
 
-export const DATE = '2019.12.20'
-export const MOVIE = 'Star Wars: A Ascensão Skywalker'
-export const INTERVAL = 1000 * 60 * 30 // Every 30 minutes
-
-export const EMAIL_PASSWORD = requireEnvironmentVariable('EMAIL_PASSWORD')
-export const NOTIFY_TO = requireEnvironmentVariable('NOTIFY_TO')
+export const SMTP_SENDER = _config.emailNotification.secureSMTPSender
+export const NOTIFY_TO = _config.emailNotification.destination
 export const ENV = getENV()
