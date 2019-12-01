@@ -1,8 +1,8 @@
 {
   "private": true,
-  "name": "scraping-infinity-war",
+  "name": "scraping-movie-tickets",
   "version": "1.0.0",
-  "description": "",
+  "description": "This project consults ingresso.com (which is the leading movie and theater ticket purchase site in Brazil) to see if a given movie is selling tickets to a given date.",
   "main": "index.js",
   "scripts": {
     "start": "node dist/main",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LucasPaganini/scraping-infinity-war.git"
+    "url": "git+https://github.com/LucasPaganini/scraping-movie-tickets.git"
   },
   "author": "Lucas Paganini",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/LucasPaganini/scraping-infinity-war/issues"
+    "url": "https://github.com/LucasPaganini/scraping-movie-tickets/issues"
   },
-  "homepage": "https://github.com/LucasPaganini/scraping-infinity-war#readme",
+  "homepage": "https://github.com/LucasPaganini/scraping-movie-tickets#readme",
   "dependencies": {
     "nodemailer": "^6.3.1",
     "puppeteer": "^2.0.0"
