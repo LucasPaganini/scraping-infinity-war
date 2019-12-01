@@ -1,4 +1,31 @@
-export const isSellingTickets = async (movieTitle: string) => {
+import * as puppeteer from 'puppeteer'
+
+export const isSellingTickets = async (
+  date: string,
+  movie: string,
+): Promise<boolean> => {
+  console.log('Launching browser')
+  const browser = await puppeteer.launch({
+    headless: process.env.NODE_ENV !== 'development',
+  })
+  const page = await browser.newPage()
+
+  console.log('Consulting ingresso.com')
+  const formatedDate = date.replace(/\./g, '')
+  const url = `https://www.ingresso.com/sao-paulo/home/cinemas/uci-analia-franco#!#data=${formatedDate}`
+  await page.goto(url, { waitUntil: 'networkidle2' })
+  const _isSellingTickets = await page.evaluate(evaluatePage, movie)
+
+  if (_isSellingTickets) console.log('Tickets are being sold!')
+  else console.log('Not yet... Sorry.')
+
+  console.log('Closing browser')
+  await browser.close()
+
+  return _isSellingTickets
+}
+
+const evaluatePage = async (movieTitle: string) => {
   const closeBannerIfNecessary = async () => {
     const buttonToCloseBanner: HTMLButtonElement = document.querySelector(
       '#pre-site > header > div > div.col-xs-8.col-md-10.text-xs-right > button',
